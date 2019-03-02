@@ -5,6 +5,8 @@ public class Pause : MonoBehaviour
 {
     public static bool gameIsPaused;
     public GameObject pauseMenuUI;
+    private bool canCount = true;
+    private bool finished = false;
 
     void Update()
     {

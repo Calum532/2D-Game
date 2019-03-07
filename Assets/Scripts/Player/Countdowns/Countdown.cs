@@ -54,9 +54,9 @@ public class Countdown : MonoBehaviour
         {
             finished = true;
             scoreUI.SetActive(true);
-            Time.timeScale = 0f;
             Pause.gameIsPaused = true;
             GetComponent<Score>().calculateAccuracy();
+            GetComponent<Score>().calculateScore();
         }
     }
 }

@@ -1,21 +1,40 @@
 ﻿using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class BurstSpawner : MonoBehaviour
 {
     public GameObject targetPrefab = null;
     public Vector2 center;
     public Vector2 size;
+
     public GameObject destroyEffect;
+    public Animator camAnim;
+
     GameObject target;
+    GameObject player;
 
     private void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Target");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()
     {
-        SpawnTarget();
+        for(int i = 0; i < 40; i++)
+        {
+            SpawnTarget();
+        }
+    }
+
+    void Update()
+    {
+        if (Pause.gameIsPaused == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                player.GetComponent<BurstScore>().clicksCount();
+            }
+        }
     }
 
     public void SpawnTarget()

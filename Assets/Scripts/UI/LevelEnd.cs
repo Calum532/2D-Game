@@ -15,5 +15,11 @@ public class LevelEnd : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
         levelCompleteUI.SetActive(false);
+        Pause.gameIsPaused = false;
+    }
+
+    public void resetHighScore()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

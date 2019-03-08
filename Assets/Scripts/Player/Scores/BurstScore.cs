@@ -3,10 +3,11 @@ using TMPro;
 
 public class BurstScore : MonoBehaviour
 {
-    public TextMeshProUGUI targets;
     public TextMeshProUGUI targetsUI;
     public float targetsDestroyed = 0;
-    public float targetsPoints;
+
+    public TextMeshProUGUI finishTime;
+    public float finishBonus;
 
     public TextMeshProUGUI clicksTotal;
     public float clickCount = 0;
@@ -26,33 +27,37 @@ public class BurstScore : MonoBehaviour
 
     void Start()
     {
-        highScore.text = PlayerPrefs.GetString("Name", Name) +": "+PlayerPrefs.GetFloat("HighScore", 0).ToString();
+        highScore.text = PlayerPrefs.GetString("BurstName", Name) +": "+PlayerPrefs.GetFloat("BurstHighScore", 0).ToString();
     }
 
     void Update()
     {
         calculateScore();
-        targets.text = targetsDestroyed.ToString();
         targetsUI.text = targetsDestroyed.ToString();
         clicksTotal.text = clickCount.ToString();
         accuracy.text = calcAccuracy.ToString("00.0") + "%";
-        score.text = totalScore.ToString();
+        score.text = totalScore.ToString("0");
     }
 
     public void setHighScoreHoldersName(string Name)
     {
-        PlayerPrefs.SetString("Name", Name);
+        PlayerPrefs.SetString("BurstName", Name);
+    }
 
+    public void setFinishTime()
+    {
+        finishTime.text = BurstTimer.finishTime.ToString("0.00");
+        finishBonus = (60 - BurstTimer.finishTime) * 100;
     }
 
     public void calculateScore()
     {
-        totalScore = targetsPoints * accuracyBonus;
+        totalScore = finishBonus * accuracyBonus;
 
-        if(totalScore > PlayerPrefs.GetFloat("HighScore", 0))
+        if(totalScore > PlayerPrefs.GetFloat("BurstHighScore", 0))
         {
-            PlayerPrefs.SetFloat("HighScore", totalScore);
-            highScore.text = Name+": "+totalScore.ToString();
+            PlayerPrefs.SetFloat("BurstHighScore", totalScore);
+            highScore.text = Name+": "+totalScore.ToString("0");
             newHighscoreUI.SetActive(true);
         }
     }
@@ -61,7 +66,6 @@ public class BurstScore : MonoBehaviour
     {
         //+1 to targets destroyed
         targetsDestroyed = targetsDestroyed + 1;
-        targetsPoints = targetsDestroyed * 100;
     }
 
     public void clicksCount()

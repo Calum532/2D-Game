@@ -7,7 +7,7 @@ public class RushSpawner : MonoBehaviour
     public Vector2 size;
 
     public GameObject destroyEffect;
-    public Animator camAnim;
+    public CameraShake cameraShake;
 
     GameObject target;
 
@@ -18,8 +18,12 @@ public class RushSpawner : MonoBehaviour
 
     void Start()
     {
-        camAnim.SetTrigger("shake");
         SpawnTarget();
+    }
+
+    public void CameraShake()
+    {
+        StartCoroutine(cameraShake.Shake(.1f, .15f));
     }
 
     public void SpawnTarget()

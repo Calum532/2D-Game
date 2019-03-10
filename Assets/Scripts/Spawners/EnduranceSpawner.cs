@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BurstSpawner : MonoBehaviour
+public class EnduranceSpawner : MonoBehaviour
 {
     public GameObject targetPrefab = null;
     public Vector2 center;
@@ -10,38 +10,21 @@ public class BurstSpawner : MonoBehaviour
     public CameraShake cameraShake;
 
     GameObject target;
-    GameObject player;
 
     private void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Target");
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()
     {
-        for(int i = 0; i < 40; i++)
-        {
-            SpawnTarget();
-        }
-    }
-
-    void Update()
-    {
-        if (Pause.gameIsPaused == false)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                player.GetComponent<BurstScore>().clicksCount();
-            }
-        }
+        SpawnTarget();
     }
 
     public void CameraShake()
     {
         StartCoroutine(cameraShake.Shake(.1f, .15f));
     }
-
 
     public void SpawnTarget()
     {

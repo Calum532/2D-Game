@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class RushObjectClicker : MonoBehaviour
+public class EnduranceObjectClicker : MonoBehaviour
 {
     public GameObject Target = null;
-    public RushSpawner spawnerScript;
+    public EnduranceSpawner spawnerScript;
     GameObject player;
     GameObject go;
     public GameObject destroyEffect;
@@ -13,9 +13,9 @@ public class RushObjectClicker : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         go = GameObject.Find("Spawner");
-        spawnerScript = (RushSpawner)go.GetComponent(typeof(RushSpawner));
-        destroyEffect = go.GetComponent<RushSpawner>().destroyEffect;
-        cameraShake = go.GetComponent<RushSpawner>().cameraShake; ;
+        spawnerScript = (EnduranceSpawner)go.GetComponent(typeof(EnduranceSpawner));
+        destroyEffect = go.GetComponent<EnduranceSpawner>().destroyEffect;
+        cameraShake = go.GetComponent<EnduranceSpawner>().cameraShake; ;
     }
 
     void Update()
@@ -29,18 +29,19 @@ public class RushObjectClicker : MonoBehaviour
 
                 if (coll.OverlapPoint(wp))
                 {
-                    player.GetComponent<RushScore>().targetsDestroyedCount();
+                    player.GetComponent<EnduranceScore>().targetsDestroyedCount();
                     Debug.Log("Target destoryed");
                     Destroy(gameObject);
                     Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                    go.GetComponent<RushSpawner>().CameraShake();
+                    go.GetComponent<EnduranceSpawner>().CameraShake();
                     spawnerScript.SpawnTarget();
-                    FindObjectOfType<AudioManager>().Play("RushBoom");
+                    FindObjectOfType<AudioManager>().Play("EnduranceBoom");
+                    player.GetComponent<EnduranceCountdown>().addTime();
                 }
                 else
                 {
                     FindObjectOfType<AudioManager>().Play("Laser");
-                    player.GetComponent<RushScore>().clicksMissedCount();
+                    player.GetComponent<EnduranceScore>().clicksMissedCount();
                 }
             }
         }

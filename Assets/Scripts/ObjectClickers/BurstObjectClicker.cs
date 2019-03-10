@@ -7,7 +7,7 @@ public class BurstObjectClicker : MonoBehaviour
     GameObject player;
     GameObject go;
     public GameObject destroyEffect;
-    public Animator camAnim;
+    public CameraShake cameraShake;
 
     private void Awake()
     {
@@ -15,8 +15,8 @@ public class BurstObjectClicker : MonoBehaviour
         go = GameObject.Find("Spawner");
         spawnerScript = (BurstSpawner)go.GetComponent(typeof(BurstSpawner));
         destroyEffect = go.GetComponent<BurstSpawner>().destroyEffect;
-        camAnim = go.GetComponent<BurstSpawner>().camAnim;
-    }
+        cameraShake = go.GetComponent<BurstSpawner>().cameraShake;
+}
 
     void Update()
     {
@@ -33,7 +33,12 @@ public class BurstObjectClicker : MonoBehaviour
                     Debug.Log("Target destoryed");
                     Destroy(gameObject);
                     Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                    camAnim.SetTrigger("shake");
+                    go.GetComponent<BurstSpawner>().CameraShake();
+                    FindObjectOfType<AudioManager>().Play("BurstBoom");
+                }
+                else
+                {
+                    FindObjectOfType<AudioManager>().Play("Laser");
                 }
             }
         }

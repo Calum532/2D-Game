@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6517035808095483888}
   - component: {fileID: 3938437324597641423}
   - component: {fileID: 2688847088220894579}
-  - component: {fileID: 4958915120396976790}
+  - component: {fileID: 4651612926534522762}
   m_Layer: 1
-  m_Name: Target 2
+  m_Name: Target 3
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
---- !u!114 &4958915120396976790
+--- !u!114 &4651612926534522762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,11 +106,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572801215645919643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd3a8388b05e0b4d8736a09d95db490, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a14049abcb16d4ea1d151cd46f1c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1572801215645919643}
   spawnerScript: {fileID: 0}
-  destroyEffect: {fileID: 253708989, guid: c24ef94b8069c6e4fbf8a5073c0e10bc, type: 3}
-  camAnim: {fileID: 0}
+  destroyEffect: {fileID: 8720678410828963082, guid: 560f30762e7b20d4f9c7605a4e30c30f,
+    type: 3}
   cameraShake: {fileID: 0}

@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rush.unity
     guid: ae256fef1c16c5e40acc03264ab2f40e
+  - enabled: 1
+    path: Assets/Scenes/Burst.unity
+    guid: da5ff39ad053fc944b53a7e266ae54eb
+  - enabled: 1
+    path: Assets/Scenes/Endurance.unity
+    guid: 7f0cea533adc8644394a3560b4a91769
   m_configObjects: {}

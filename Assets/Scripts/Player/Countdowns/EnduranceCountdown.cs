@@ -17,26 +17,32 @@ public class EnduranceCountdown : MonoBehaviour
     public float totalTime;
     public float totalTimeElapsed;
 
-    public Animator camAnim;
+    public Animator camAnim1;
+    public Animator camAnim2;
+    public Animator camAnim3;
+    public Animator camAnim4;
 
     public void addTime()
     {
         if(GetComponent<EnduranceScore>().targetsDestroyed <= 10)
         {
             timer = timer + 1f;
-            camAnim.SetTrigger("TimeAdded");
+            camAnim1.SetTrigger("1SecAdded");
         }
         else if (GetComponent<EnduranceScore>().targetsDestroyed <= 15)
         {
             timer = timer + 0.8f;
+            camAnim2.SetTrigger("1SecAdded");
         }
         else if (GetComponent<EnduranceScore>().targetsDestroyed <= 20)
         {
             timer = timer + 0.5f;
+            camAnim3.SetTrigger("1SecAdded");
         }
         else
         {
             timer = timer + 0.2f;
+            camAnim4.SetTrigger("1SecAdded");
         }
     }
 

@@ -28,14 +28,8 @@ public class EnduranceScore : MonoBehaviour
 
     public GameObject newHighscoreUI;
 
-    void Start()
-    {
-        highScore.text = PlayerPrefs.GetString("EnduranceName", Name) +": "+PlayerPrefs.GetFloat("EnduranceHighScore", 0).ToString("0");
-    }
-
     void Update()
     {
-        calculateScore();
         clickCount = targetsDestroyed + clicksMissed;
         time.text = timeElapsed.ToString("0 Seconds");
         targets.text = targetsDestroyed.ToString();
@@ -59,6 +53,8 @@ public class EnduranceScore : MonoBehaviour
             PlayerPrefs.SetFloat("EnduranceHighScore", totalScore);
             highScore.text = Name+": "+totalScore.ToString();
             newHighscoreUI.SetActive(true);
+
+            highScore.text = PlayerPrefs.GetString("EnduranceName", Name) + ": " + PlayerPrefs.GetFloat("EnduranceHighScore", 0).ToString("0");
         }
     }
 

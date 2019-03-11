@@ -39,6 +39,11 @@ public class EnduranceScore : MonoBehaviour
         score.text = totalScore.ToString("0");
     }
 
+    public void Start()
+    {
+        highScore.text = PlayerPrefs.GetString("EnduranceName", Name) + ": " + PlayerPrefs.GetFloat("EnduranceHighScore", 0).ToString("0");
+    }
+
     public void setHighScoreHoldersName(string Name)
     {
         PlayerPrefs.SetString("EnduranceName", Name);
@@ -53,8 +58,6 @@ public class EnduranceScore : MonoBehaviour
             PlayerPrefs.SetFloat("EnduranceHighScore", totalScore);
             highScore.text = Name+": "+totalScore.ToString();
             newHighscoreUI.SetActive(true);
-
-            highScore.text = PlayerPrefs.GetString("EnduranceName", Name) + ": " + PlayerPrefs.GetFloat("EnduranceHighScore", 0).ToString("0");
         }
     }
 

@@ -28,6 +28,7 @@ public class Pause : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 
     void PauseGame()
@@ -35,6 +36,7 @@ public class Pause : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void Restart()
@@ -43,6 +45,7 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
         pauseMenuUI.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void LoadMainMenu()
@@ -50,11 +53,13 @@ public class Pause : MonoBehaviour
         Debug.Log("Loading Main Menu...");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void QuitGame()
     {
         Debug.Log("Quiting Game...");
         Application.Quit();
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 }

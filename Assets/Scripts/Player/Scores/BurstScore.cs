@@ -59,6 +59,7 @@ public class BurstScore : MonoBehaviour
             PlayerPrefs.SetFloat("BurstHighScore", totalScore);
             highScore.text = Name+": "+totalScore.ToString("0");
             newHighscoreUI.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("NewHighScore!");
         }
     }
 

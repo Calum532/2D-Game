@@ -8,6 +8,7 @@ public class LevelEnd : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void Retry()
@@ -16,10 +17,12 @@ public class LevelEnd : MonoBehaviour
         Time.timeScale = 1f;
         levelCompleteUI.SetActive(false);
         Pause.gameIsPaused = false;
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void resetHighScore()
     {
         PlayerPrefs.DeleteAll();
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 }

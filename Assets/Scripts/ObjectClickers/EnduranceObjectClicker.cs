@@ -15,7 +15,7 @@ public class EnduranceObjectClicker : MonoBehaviour
         go = GameObject.Find("Spawner");
         spawnerScript = (EnduranceSpawner)go.GetComponent(typeof(EnduranceSpawner));
         destroyEffect = go.GetComponent<EnduranceSpawner>().destroyEffect;
-        cameraShake = go.GetComponent<EnduranceSpawner>().cameraShake; ;
+        cameraShake = go.GetComponent<EnduranceSpawner>().cameraShake;
     }
 
     void Update()

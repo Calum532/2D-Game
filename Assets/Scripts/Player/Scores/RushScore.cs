@@ -44,7 +44,6 @@ public class RushScore : MonoBehaviour
     public void setHighScoreHoldersName(string Name)
     {
         PlayerPrefs.SetString("RushName", Name);
-
     }
 
     public void calculateScore()
@@ -56,6 +55,7 @@ public class RushScore : MonoBehaviour
             PlayerPrefs.SetFloat("RushHighScore", totalScore);
             highScore.text = Name+": "+totalScore.ToString();
             newHighscoreUI.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("NewHighScore!");
         }
     }
 

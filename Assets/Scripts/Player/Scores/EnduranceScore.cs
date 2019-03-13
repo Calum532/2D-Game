@@ -53,6 +53,7 @@ public class EnduranceScore : MonoBehaviour
             PlayerPrefs.SetFloat("EnduranceHighScore", totalScore);
             highScore.text = Name+": "+totalScore.ToString();
             newHighscoreUI.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("NewHighScore!");
 
             highScore.text = PlayerPrefs.GetString("EnduranceName", Name) + ": " + PlayerPrefs.GetFloat("EnduranceHighScore", 0).ToString("0");
         }

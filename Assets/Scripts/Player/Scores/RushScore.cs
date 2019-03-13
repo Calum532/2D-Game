@@ -27,7 +27,7 @@ public class RushScore : MonoBehaviour
 
     void Start()
     {
-        highScore.text = PlayerPrefs.GetString("RushName", Name) +": "+PlayerPrefs.GetFloat("RushHighScore", 0).ToString();
+        highScore.text = PlayerPrefs.GetString("RushName", Name) +": "+PlayerPrefs.GetFloat("RushHighScore", 0).ToString("0");
     }
 
     void Update()
@@ -53,7 +53,7 @@ public class RushScore : MonoBehaviour
         if(totalScore > PlayerPrefs.GetFloat("RushHighScore", 0))
         {
             PlayerPrefs.SetFloat("RushHighScore", totalScore);
-            highScore.text = Name+": "+totalScore.ToString();
+            highScore.text = Name+": "+totalScore.ToString("0");
             newHighscoreUI.SetActive(true);
             FindObjectOfType<AudioManager>().Play("NewHighScore!");
         }

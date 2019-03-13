@@ -27,7 +27,7 @@ public class BurstScore : MonoBehaviour
 
     void Start()
     {
-        highScore.text = PlayerPrefs.GetString("BurstName", Name) +": "+PlayerPrefs.GetFloat("BurstHighScore", 0).ToString();
+        highScore.text = PlayerPrefs.GetString("BurstName", Name) +": "+PlayerPrefs.GetFloat("BurstHighScore", 0).ToString("0");
     }
 
     void Update()

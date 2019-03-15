@@ -46,6 +46,12 @@ public class RushScore : MonoBehaviour
         PlayerPrefs.SetString("RushName", Name);
     }
 
+    public void resetHighScore()
+    {
+        PlayerPrefs.DeleteAll();
+        FindObjectOfType<AudioManager>().Play("Click");
+    }
+
     public void calculateScore()
     {
         totalScore = targetsPoints * accuracyBonus;

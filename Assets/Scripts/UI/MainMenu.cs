@@ -22,6 +22,16 @@ public class MainMenu : MonoBehaviour
         enduranceHighScore.text = PlayerPrefs.GetString("EnduranceName", Name) + ": " + PlayerPrefs.GetFloat("EnduranceHighScore", 0).ToString("0");
     }
 
+    public void resetScores()
+    {
+        PlayerPrefs.DeleteAll();
+        FindObjectOfType<AudioManager>().Play("Click");
+
+        rushHighScore.text = PlayerPrefs.GetString("RushName", Name) + ": " + PlayerPrefs.GetFloat("RushHighScore", 0).ToString("0");
+        burstHighScore.text = PlayerPrefs.GetString("BurstName", Name) + ": " + PlayerPrefs.GetFloat("BurstHighScore", 0).ToString("0");
+        enduranceHighScore.text = PlayerPrefs.GetString("EnduranceName", Name) + ": " + PlayerPrefs.GetFloat("EnduranceHighScore", 0).ToString("0");
+    }
+
     public void About()
     {
         menuUI.SetActive(false);

@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 605daf52a2b58a442bf1a88b31882e74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3d4d699e3d0d5a4eb3cae231adf9136, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,5 +112,4 @@ MonoBehaviour:
   Target: {fileID: 1572801215645919643}
   spawnerScript: {fileID: 0}
   destroyEffect: {fileID: 253708989, guid: c24ef94b8069c6e4fbf8a5073c0e10bc, type: 3}
-  camAnim: {fileID: 0}
   cameraShake: {fileID: 0}

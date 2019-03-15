@@ -39,23 +39,6 @@ public class Pause : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Click");
     }
 
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1f;
-        gameIsPaused = false;
-        pauseMenuUI.SetActive(false);
-        FindObjectOfType<AudioManager>().Play("Click");
-    }
-
-    public void LoadMainMenu()
-    {
-        Debug.Log("Loading Main Menu...");
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Main Menu");
-        FindObjectOfType<AudioManager>().Play("Click");
-    }
-
     public void QuitGame()
     {
         Debug.Log("Quiting Game...");

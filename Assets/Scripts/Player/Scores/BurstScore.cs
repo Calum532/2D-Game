@@ -44,6 +44,12 @@ public class BurstScore : MonoBehaviour
         PlayerPrefs.SetString("BurstName", Name);
     }
 
+    public void resetHighScore()
+    {
+        PlayerPrefs.DeleteAll();
+        FindObjectOfType<AudioManager>().Play("Click");
+    }
+
     public void setFinishTime()
     {
         finishTime.text = BurstTimer.finishTime.ToString("0.00");

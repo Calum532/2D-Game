@@ -83,7 +83,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: EnduranceBoom
     clip: {fileID: 8300000, guid: 757bd8d3393e940f7a1fdf26999c6787, type: 3}
-    volume: 0.2
+    volume: 0.15
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -93,42 +93,6 @@ MonoBehaviour:
   - name: NewHighScore!
     clip: {fileID: 8300000, guid: e73067155e47c4d36a2927cc2acfc898, type: 3}
     volume: 1
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: MenuMusic
-    clip: {fileID: 0}
-    volume: 0.2
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: RushMusic
-    clip: {fileID: 0}
-    volume: 0.2
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: BurstMusic
-    clip: {fileID: 0}
-    volume: 0.2
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 0
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: EnduranceMusic
-    clip: {fileID: 0}
-    volume: 0.2
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0

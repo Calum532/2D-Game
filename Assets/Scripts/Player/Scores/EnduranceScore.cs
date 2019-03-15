@@ -49,6 +49,12 @@ public class EnduranceScore : MonoBehaviour
         PlayerPrefs.SetString("EnduranceName", Name);
     }
 
+    public void resetHighScore()
+    {
+        PlayerPrefs.DeleteAll();
+        FindObjectOfType<AudioManager>().Play("Click");
+    }
+
     public void calculateScore()
     {
         totalScore = (timeElapsed * 100) * accuracyBonus;

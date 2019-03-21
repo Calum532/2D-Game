@@ -35,7 +35,7 @@ public class BurstTimer : MonoBehaviour
         if (finished == false & countdown == true)
         {
             t += Time.deltaTime;
-            timerText.text = (t % 60).ToString("0.00");
+            timerText.text = t.ToString("0.00");
         }
 
         if (GetComponent<BurstScore>().targetsDestroyed >= 40)
